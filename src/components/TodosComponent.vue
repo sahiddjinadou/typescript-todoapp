@@ -2,7 +2,11 @@
   <div>
     <TodoHeader @add-todo="addTodo" />
 
-    <TodoMain :taches="todos" @delete-todo="deleteTodo" />
+    <TodoMain 
+    :taches="todos" 
+    @delete-todo="deleteTodo" 
+    @update-todo="updateTodo" 
+    />
 
     <TodoFooter :todos="todos" />
 
@@ -32,6 +36,10 @@ function addTodo(value: string) {
 //supression d'une tache 
 function deleteTodo(todo: Todo): void {
   todos.value = todos.value.filter((t) => t !== todo)  
+}
+
+function updateTodo(todo:Todo, completedVal:boolean){
+  todo.complete = completedVal
 }
 </script>
 
