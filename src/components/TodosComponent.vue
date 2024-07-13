@@ -5,6 +5,10 @@
     <TodoMain :taches="todos" />
 
     <TodoFooter :todos="todos" />
+
+    <pre>
+      {{todos}}
+    </pre>
   </div>
 </template>
 
@@ -14,11 +18,12 @@ import TodoMain from '@/components/TodoMain.vue'
 import TodoFooter from '@/components/TodoFooter.vue'
 import type { Todo } from '@/@types'
 import { ref } from 'vue';
+import { nanoid} from 'nanoid'
 
 const todos = ref<Todo[]>([]);
 function addTodo(value: string) {
   todos.value.push({
-    id: 0,
+    id: nanoid(),
     title: value,
     complete: false
   })
