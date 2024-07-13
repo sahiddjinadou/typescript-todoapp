@@ -10,9 +10,7 @@
 
     <TodoFooter :todos="todos" />
 
-    <pre>
-      {{ todos }}
-    </pre>
+   
   </div>
 </template>
 
