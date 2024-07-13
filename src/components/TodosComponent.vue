@@ -7,7 +7,7 @@
     <TodoFooter :todos="todos" />
 
     <pre>
-      {{todos}}
+      {{ todos }}
     </pre>
   </div>
 </template>
@@ -17,10 +17,10 @@ import TodoHeader from '@/components/TodoHeader.vue'
 import TodoMain from '@/components/TodoMain.vue'
 import TodoFooter from '@/components/TodoFooter.vue'
 import type { Todo } from '@/@types'
-import { ref } from 'vue';
-import { nanoid} from 'nanoid'
+import { ref } from 'vue'
+import { nanoid } from 'nanoid'
 
-const todos = ref<Todo[]>([]);
+const todos = ref<Todo[]>([])
 function addTodo(value: string) {
   todos.value.push({
     id: nanoid(),
